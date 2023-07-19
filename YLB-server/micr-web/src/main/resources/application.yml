@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: micr-web
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  redis:
+    host: 192.168.200.130
+    port: 6379
+    password: 123456
+
+#端口配置
+server:
+  port: 8000
+  servlet:
+    context-path: /api
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
+
+#dubbo配置
+dubbo:
+  registry:
+    address: zookeeper://192.168.200.130:2181
+  config-center:
+    timeout: 10000
+  scan:
+    base-packages: com.xie.front
+  consumer:
+    check: false
+
+aliyun:
+  sms:
+    url: https://cxkjsms.market.alicloudapi.com/chuangxinsms/dxjk
+    Authorization: APPCODE 866d3a5b49f04ddf88f322bebb980b39
+    content: 【创信】你的验证码是：5873，3分钟内有效！
+    loginContent: 【创信】登录验证码是：5873，3分钟内有效！
+  realname:
+    url: https://eid.shumaidata.com/eid/check
+    Authorization: APPCODE 866d3a5b49f04ddf88f322bebb980b39
+
+jwt:
+  secret: ebf170b2530aa09be0be2bdde919d281
+
